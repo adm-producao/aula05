@@ -11,7 +11,7 @@
     <script src="libs/panelset/panelset.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b0015080b2db4815a2cd799ad09422ca","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b393b0156f544319b844cdebd65349ca","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -26,8 +26,6 @@
     <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-scribble/scribble.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
-    <link href="libs/countdown/countdown.css" rel="stylesheet" />
-    <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="slides.css" type="text/css" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -39,7 +37,7 @@ class: center, middle, inverse, title-slide
 # Administração da Produção
 ]
 .subtitle[
-## Unidade 04: Planejamento da capacidade produtiva
+## Unidade 05: Plano Mestre de Produção
 ]
 .author[
 ### <br></br>Renata Oliveira
@@ -73,1215 +71,267 @@ layout: true
 
 
 
-## 1. Definições
+## Plano Mestre de Produção (PMP)
 
-### Capacidade Produtiva
+### Definição e Conceito
 
-**Definição:** Capacidade é o volume máximo potencial por unidade de tempo de atividade de agregação de valor que pode ser atingindo por uma unidade produtiva sob condições normais de operação [Corrêa, 2017].
+O **Plano agregado de produção** é um plano intermediário de produção que estabelece a quantidade total de produtos a serem fabricados em um determinado período. Ele considera a **demanda prevista**, a **capacidade produtiva** da empresa e os **recursos disponíveis**, buscando equilibrar oferta e demanda de forma eficiente.
 
-**Nível de capacidade:**
-
-- Máquinas ou funcionários individuais
-- Centros de produção (composto por máquinas e funcionários)
-- Planta
+O **Plano agregado de produção** fornece um quadro referência para a busca e alocação de recursos: mão-de-obra, equipamentos, materiais, máquinas, horas extras, subcontratações. Esse quadro é apresentado por meio de medidas consolidadas para todos os produtos ou para algumas linhas individualizadas; a implementação efetiva exige que haja uma **desagregação** do planejamento em **produtos individuais**
 
 ---
 
-## 1. Definições
+## Plano Mestre de Produção (PMP)
 
-### Formas de Medir a Capacidade
+### Definição e Conceito
 
-- Pela quantidade de saídas
-- Pela quantidade de insumos
 
-### Determinação da Capacidade
+O **Planejamento-Mestre da Produção (PMP)**, também conhecido como MPS (Master Production Schedule), é um **plano detalhado** que estabelece **quanto** e **quando** cada produto final deve ser fabricado em um horizonte de tempo específico. Ele funciona como uma ponte entre o planejamento estratégico (de longo prazo) e a execução operacional (de curto prazo).
 
-- Itens processados por unidade de tempo
-- Tempo disponível de produção: número de horas que podem ser usadas para produção
+O **PMP desagrega o Plano Agregado de Produção em itens específicos**, transformando previsões e pedidos em um **cronograma executável de produção**. É essencialmente uma declaração de compromisso da empresa sobre o que será produzido, considerando capacidade disponível, demanda prevista e recursos necessários.
+
 
 ---
 
-## 1. Definições
+## Plano Mestre de Produção (PMP)
 
-### Tempo de Ciclo
+### Definição e Conceito
+.large[
+O PMP é um documento que diz **quais itens serão produzidos**, em que **quantidades** e em **quais datas**, servindo como base para o planejamento de recursos, compras e controle de produção.
+]
+
+---
+
+## Plano Mestre de Produção (PMP)
+
+###  Input para o PMP
 
 .pull-left[
+**a) Previsão de Demanda**
+Dados históricos de vendas
+Tendências de mercado
+Sazonalidades
+Análises estatísticas
 
-**Definição:** Tempo de ciclo é o tempo necessário para a execução do trabalho em um item.
+**b) Carteira de Pedidos**
+Pedidos firmes de clientes
+Contratos estabelecidos
+Encomendas confirmadas
 
-
-
-**Exemplo:**
-
-Um centro de produção possui uma máquina que opera em um turno de 8 horas, cinco dias por semana.
-
-a) Disponibilidade de horas de produção na semana desta máquina
+**c) Plano Agregado de Produção**
+Diretrizes estratégicas
+Metas de produção globais
+Políticas de estoque
 ]
 
 .pull-right[
-b) Quantidade de itens que podem ser produzidos por semana - itens que necessitam de 30 minutos (tempo de ciclo)
+**d) Capacidade Disponível**
+Recursos produtivos
+Mão de obra
+Equipamentos
+Turnos de trabalho
 
-É possível atender as seguintes demandas semanais?
-
-- 10 unidades de um item 1, que tem tempo de ciclo igual a 30 minutos
-- 30 unidades de um item 2, que tem tempo de ciclo igual de 1 hora
+**e) Estoques Atuais**
+Produtos acabados
+Estoque de segurança desejado
+Work in process (WIP)
 ]
 
 ---
 
-## 2. Utilização e Eficiência
+## Plano Mestre de Produção (PMP)
 
-### Capacidade Produtiva: Tipos
+###  Estrutura do PMP
 
-**Capacidade instalada:** capacidade máxima de produção ininterrupta, sem que seja considerada nenhuma perda.
+| Período | Previsão | Pedidos | Disponível | PMP | ATP* |
+|---------|----------|---------|------------|------|-----|
+| Semana 1 | X | Y | Z | W | Q |
+| Semana 2 | X | Y | Z | W | Q |
+| Semana 3 | X | Y | Z | W | Q |
+| Semana 4 | X | Y | Z | W | Q |
 
-**Capacidade total teórica (de projeto):** capacidade máxima de produção durante a jornada de trabalho disponível.
+*ATP: Available to Promise (Disponível para Promessa)
 
-**Capacidade efetiva:** capacidade teórica subtraindo-se as indisponibilidades.
+---
 
-**Capacidade para planejamento (capacidade real de produção):** capacidade de produção considerando todas as perdas.
+## Plano Mestre de Produção (PMP)
+
+### Elementos Críticos do PMP
+
+**1. ATP (Available to Promise)**
+Quantidade que pode ser prometida a novos clientes sem comprometer pedidos existentes.
+
+ATP = Estoque Disponível + PMP - Pedidos Firmes acumulados até próximo PMP
+
+**2. Estoque de Segurança**
+Buffer para absorver variações de demanda ou problemas de produção.
+
+**3. Congelamento do Horizonte**
+Zona congelada (1-4 semanas): Sem alterações
+Zona firme (5-8 semanas): Alterações limitadas
+Zona flexível (9+ semanas): Alterações permitidas
 
 
 ---
 
-## 2. Utilização e Eficiência
+## Plano Mestre de Produção (PMP)
 
-### Perdas de Capacidade de Produção
+### Elementos Críticos do PMP
 
-**Exemplos de perdas de capacidade:**
+O Congelamento do Horizonte (ou Time Fence) é uma estratégia de gestão do PMP que divide o horizonte de planejamento em zonas com diferentes níveis de flexibilidade para mudanças.
 
-- Paradas para manutenção
-- Perdas por retrabalho ou refugo de produtos
-- Tempo de preparação (setup)
-- Tempo em que o equipamento não está operando porque não há WIP (work in process - estoque em processo) para processar
-- Tempo ocioso sem operador: tempo em que o WIP está pronto, porém há nenhum operador disponível
-
-
----
-
-## 2. Utilização e Eficiência
-
-### Utilização
-
-**Definição:** Utilização mede quanto da capacidade teórica tem sido feita disponível.
-
-&gt; Utilização = Capacidade efetiva disponível (utilizada) / Capacidade teórica de projeto
-
-**Exemplo:** Em um processo de prestação de serviços que trabalhe 8 horas por dia. Dessas 8 horas teóricas o setor trabalhou, 6 horas. Determine sua utilização.
-
-Utilização = 6/8 = 0,750 = 75%
+| Zona | Semanas | Status Atual | Exemplo de Solicitação | Resposta |
+|----------|---------|-------------------------------|----------------------------------|-----------------------------------------------| 
+| Congelada | 1-4 | Tecido cortado, estampas prontas | Cliente quer mudar cor da semana 2 | ❌ Impossível - tecido já cortado | 
+| Firme | 5-8 | Tecido comprado, estampa não feita | Cliente quer mudar estampa da semana 6 | ⚠️ Possível - mas cobra R\$ 500 de setup extra | 
+| Flexível | 9-16 | Apenas previsão | Cliente quer incluir novo modelo semana 12 | ✅ OK - tempo suficiente para planejar |
 
 ---
 
-## 2. Utilização e Eficiência
+## Plano Mestre de Produção (PMP)
 
-### Eficiência
+### Benefícios do PMP Bem Elaborado
 
-**Definição:** Eficiência reflete quão bem o período de disponibilidade do processo está sendo usado.
-
-&gt; Eficiência = volume de produção real / capacidade efetiva   
-&gt; Eficiência = Saídas demonstradas / Saídas-padrão
-
-**Exemplo:** Em 6 horas trabalhadas, um funcionário bem treinado, trabalhando com eficiência-padrão, teria atendido, por exemplo, 24 clientes (4 clientes por hora). No entanto, o funcionário atendeu nas 6 horas apenas 21 clientes. Determine a sua eficiência.
-
-Eficiência = 21/24 = 0,875 = 87,5%
+✅ Coordenação entre vendas, produção e suprimentos    
+✅ Visibilidade da capacidade e necessidades futuras    
+✅ Redução de estoques excessivos    
+✅ Melhoria no atendimento ao cliente    
+✅ Base sólida para o MRP e programação detalhada    
+✅ Antecipação de problemas de capacidade
 
 ---
 
-## 2. Utilização e Eficiência
+## Plano Mestre de Produção (PMP)
+### Desafios Comuns
+⚠️ Previsões imprecisas    
+⚠️ Mudanças frequentes na demanda.  
+⚠️ Restrições de capacidade não consideradas.  
+⚠️ Falta de integração entre departamentos.  
+⚠️ Horizontes de planejamento inadequados.  
+⚠️ Dados de estoque imprecisos
 
-### Capacidade Real
-
-**Definição:** Capacidade para planejamento ou capacidade real
-
-&gt; Cap. real = Cap. total teórica × Utilização × Eficiência
-
-**Exemplo:** Considere que um setor responsável por um processo de prestação de serviços trabalhe 8 horas por dia 5 dias por semana. Um funcionário do setor bem treinado, trabalhando com eficiência-padrão, teria atendido, em média, 3 clientes por hora. Considerando que a utilização dos funcionários no setor é igual 80% e sua eficiência é igual a 90%, determine a capacidade real semanal de dois funcionários.
-
----
-
-## 2. Utilização e Eficiência
-
-### Exercício
-
-A demanda semanal estimada para um centro de trabalho é de 100 unidades. Cada funcionário é capaz de produzir 3 unidades por hora considerando a saída-padrão. Considerando que a taxa de utilização e de eficiência deste centro são ambas iguais a 50% e que cada funcionário trabalha 40 horas por semana, determine o número de funcionários que este centro de trabalho deve ter.
-
-&gt; Cap. real = Cap. total teórica × Utilização × Eficiência
-
---
-
-- Utilização = 50%
-- Eficiência = 50%
-- Capacidade teórica = 120 unidades por semana por funcionário
-
-
+O PMP é fundamental para empresas que buscam equilibrar eficiência operacional com responsividade ao mercado, servindo como espinha dorsal do sistema de planejamento e controle da produção.
 
 ---
 
-## 2. Utilização e Eficiência
-
-### Exercício de Aplicação
-
-Um centro de trabalho tem 160 horas de trabalho disponível por mês e é capaz de produzir 120 unidades por hora de trabalho. No entanto, no mês anterior ele produziu mercadorias por 130 horas (preparação e ajustes da máquina, reuniões, manutenção de máquina), produzindo um total de 13000 unidades no mês (100 unidades por hora). Qual é a capacidade teórica mensal, a utilização e a eficiência do centro de trabalho?
-
---
-
-- Capacidade teórica = 160 × 120 = 19200
-- Considerando capacidade em horas: Utilização = 130/160 = 0,8125
-- Considerando capacidade em quantidade de saídas: Utilização = 15600/19200 = 0,8125
-- Eficiência = 100/120 = 13000/15600 = 0,8333
-
----
-
-## 2. Utilização e Eficiência
-
-
-
-### COM VOCÊS
-
-<div class="countdown" id="timer_bf1619a6" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-
-
-Um centro de trabalho tem 160 horas disponível por mês de trabalho e é capaz de produzir 120 unidades por hora de trabalho. No entanto, no mês anterior ele produziu mercadorias por 130 horas (preparação e ajustes da máquina, reuniões, manutenção de máquina), produzindo um total de 16900 unidades no mês (130 unidades por hora). Qual é a capacidade teórica mensal, a utilização e a eficiência do centro de trabalho?
-
---
-
-- Capacidade teórica = 160 × 120 = 19200
-- Considerando a capacidade em horas: Utilização = 130/160 = 0,8125
-- Eficiência = 130/120 = 1,0833
-
----
-
-## 2. Utilização e Eficiência
-
-### Exercício 3
-
-Considere os registros de ocorrências de um dado setor (em uma dada semana):
-
-.pull-left[
-| Registros | Horas |
-|-----------|-------|
-| Setup | 6h |
-| Inspeção | 2h |
-| Manutenção preventiva | 1h |
-| Manutenção corretiva | 3h |
-| Falta de material | 2h |
-]
-
-
-Considerando que este setor tem capacidade para produzir 200 peças por hora em dois turnos de oito horas, cinco dias por semana, definir:
-
-Os graus de utilização e de eficiência considerando que nesta semana foram produzidas 12.000 unidades e que na capacidade efetiva são consideradas apenas as perdas por indisponibilidades planejadas.
-
-
----
-
-## 3. Eficácia Global de Equipamento (OEE)
-
-### Definição
-
-**Eficácia global de equipamento (OEE)** é um índice de eficiência usado para avaliar a eficácia de equipamentos de operações produtivas baseado em três aspectos: disponibilidade (D), desempenho (P) e qualidade (Q). O OEE é dado por:
-
-&gt; OEE = D × P × Q
-
-
-- OEE &lt; 65%: inaceitável
-- 65% ≤ OEE &lt; 75%: Razoável
-- 75% ≤ OEE &lt; 85%: Aceitável
-- 85% ≤ OEE &lt; 95%: Bom
-- OEE &gt; 95%: Excelente
-
----
-
-
-## 3. Eficácia Global de Equipamento (OEE)
-
-### Definições dos Tempos
-
-.midi[
-**Tempo disponível (ou Tempo calendário):** Total de horas no período (ex: 24h/dia, 168h/semana)   
-**Tempo de carregamento (loading time):** tempo disponível para produção menos todas as paradas planejadas. É o tempo que o equipamento deveria estar produzindo. Também chamado de "tempo operacional disponível" ou "tempo planejado de produção".    
-**Tempo operacional total (operating time):** Tempo de carregamento MENOS as perdas de disponibilidade não planejadas. Exemplos de perdas de disponibilidades: (i) Tempo com setup e ajustes; (ii) Parada por quebra de equipamento.   
-**Tempo operacional líquido (Net Operating Time):** tempo operacional total menos perdas de desempenho/velocidade. Por exemplo, (i) Perdas de treinamento (pessoal novo), (ii) Pessoal com baixo rendimento; (iii) Atrasos relacionados à tecnologia.   
-**Tempo operacional útil (Valuable Operating Time):** Tempo operacional líquido menos perdas de qualidade como, por exemplo, (i) Perdas de retrabalho (ii) Tratamento de reclamações, (iii) produto defeituosa. 
-]
----
-
-## 3. Eficácia Global de Equipamento (OEE)
-
-### Índices do OEE
-
-**Índice de disponibilidade D:** a razão entre o tempo de carregamento e o tempo operacional total.
-
-**Índice de desempenho P:** razão entre o tempo operacional líquido e o tempo operacional total ou a razão entre a taxa de produção real e a taxa de produção padrão.
-
-**Índice de qualidade Q:** razão entre o tempo operacional útil e o tempo operacional líquido ou a taxa de itens conformes.
-
-&gt; OEE = D × P × Q
-
-
-
----
-
-
-## 3. Eficácia Global de Equipamento (OEE)
-
-**Exemplo:** Compute o OEE para uma máquina considerando um índice de disponibilidade D=0,8; índice de desempenho P=0,7 e índice de qualidade Q=0,9
-
---
-
-OEE = D × P × Q = 0,8 × 0,7 × 0,9 = 0,504
-
-
-
-
----
-
-
-## 3. Eficácia Global de Equipamento (OEE)
+## Plano Mestre de Produção (PMP)
 
 ### Exemplo 1
 
-Determine os índices de disponibilidade (D), de desempenho (P), de qualidade (Q) e o OEE.
-
-- Tempo de carregamento: 35h (com 5h de perdas)
-- Tempo operacional total: 27h (com 8h de perdas)
-- Tempo operacional líquido: 23h (com 4h de perdas)
-- Tempo operacional útil: 21h (com 2h de perdas)
-
-
----
-
-## 3. Eficácia Global de Equipamento (OEE)
-
-
-
-### COM VOCÊS
-
-<div class="countdown" id="timer_d93442a4" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-
-
-Em um período típico de sete dias, uma máquina particular tem capacidade para trabalhar por 150 horas (tempo de carregamento). O tempo médio com setups e ajustes é de 15 horas e o tempo médio de quebra é de 5 horas a cada sete dias. O tempo de ciclo de produção é igual a 30 minutos (0,5 hora) e durante o período em que a máquina está disponível foram produzidas 234 peças. Subsequentemente, 3% das peças processadas pela máquina mostram algum tipo de defeito. Determine o OEE desta máquina.
-
---
-
-- D = 130/150 = 0,86
-- P = (0,5 × 234)/(130) = 234/(2 × 130) = 0,9
-- Q = 0,97
-- OEE = D × P × Q = 0,86 × 0,9 × 0,97 = 0,75 (OEE aceitável)
-
----
-
-## 4. Decisões Envolvendo a Gestão da Capacidade
-
-### Decisões por Horizonte de Tempo
-
-**Longo prazo:**
-
-- Determinação do nível global de capacidade no longo prazo
-- Determinação de padrões de decisões para alteração dos níveis globais de capacidade
-
-**Médio prazo:**
-
-- Produção nivelada ou acompanhar a demanda com a produção
-- Composto de funcionários próprios e de terceiros usar para atender a flutuação de demanda
-
----
-
-## 4. Decisões Envolvendo a Gestão da Capacidade
-
-### Decisões por Horizonte de Tempo
-
-**Curto prazo:**
-
-- Alocação de recursos a tarefas
-- Acomodação das flutuações de demanda no curtíssimo prazo
-
-
----
-
-## 4. Decisões Envolvendo a Gestão da Capacidade
-
-### Decisões sobre Capacidade
-
-**Decisões sobre capacidade** , em geral, envolvem:
-
-1. Avaliação da capacidade existente
-2. Previsão de necessidades futuras de capacidade
-3. Identificação de diferentes formas de alterar a capacidade nos curto, médio e longo prazos
-4. Identificação de diferentes formas de alterar a demanda
-5. Avaliação econômica, operacional e tecnológica de alternativas de alterar a capacidade
-6. Seleção de alternativas para a obtenção de capacidade adicional
-
-
----
-
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
-
-### Ponto de Equilíbrio
-
-Na análise do ponto de equilíbrio, calcula-se o **nível de produção** a partir do qual a planta ou unidade operação **começa a dar lucro**, ou seja, o ponto a partir do qual a **receita supera os custos** [Lustosa et al., 2008].
-
-&gt; ATENÇÃO: O ponto de equilíbrio tradicional não considera o valor do dinheiro no tempo.
-
----
-
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
-
-
-### Definições
-
 .pull-left[
-**Receita ou faturamento (R):**
-
-- Qv: quantidade vendida
-- p: preço unitário de venda
-
-`$$R = Qv × p$$`
-
+**Fábrica de Bicicletas**   
+Produto: Bicicleta Mountain Bike Modelo X   
+Estoque inicial: 50 unidades   
+Estoque de segurança desejado: 20 unidades   
+Lote de produção: 100 unidades   
+Lead time de produção: 1 semana   
 ]
 
 .pull-right[
-**Notação:**
-
-Cf: custo fixo que independe da quantidade produzida   
-Qp: quantidade produzida   
-Cu: custo unitário ou custo marginal (custo para se fabricar uma unidade do produto)   
-CT: Custo total
-
-`$$CT = Cf + Qp × Cu$$`
+| Semana | Previsão | Pedidos Firmes | Maior Valor |
+|--------|----------|----------------|-------------|
+| 1 | 30 | 35 | 35 |
+| 2 | 40 | 25 | 40 |
+| 3 | 35 | 20 | 35 |
+| 4 | 30 | 15 | 30 |
+| 5 | 45 | 10 | 45 |
 ]
 
----
-
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
-
-
-### Cálculo do Ponto de Equilíbrio
-
-O ponto de equilíbrio pode ser encontrado igualando-se a receita ao custo total [Lustosa et al., 2008].
-
-`$$R = CT$$`
-
-Seja Q a quantidade de equilíbrio. Assumindo que existe e é possível vender uma quantidade Q*, se R = CT, então:
-
-`$$Q × p = Cf + (Q × Cu)$$`
 
 ---
 
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
-
-### Cálculo do Ponto de Equilíbrio
-
-O ponto de equilíbrio pode ser dado por:
-
-`$$Q = Cf / (p - Cu)$$`
-Em outras palavras, 
-
-Q = custo fixo / (preço unitário - custo unitário)
-
----
-
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
-
-### Cálculo do Ponto de Equilíbrio
-
-&lt;img src="img/pe_capacidade.png" width="50%" style="display: block; margin: auto;" /&gt;
-
-
-
----
-
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+## Plano Mestre de Produção (PMP)
 
 ### Exemplo 1
 
-**Enunciado:** Um restaurante que tem um custo fixo mensal a ser desembolsado no início de cada mês de R$20.000,00 (e não tem outros custos fixos). Cada refeição tem um custo unitário médio de R$5,00. Esse valor é constante e independe da quantidade produzida, para a faixa de produção considerada. O preço médio estimado para a venda de cada refeição tem o valor de R$7,00. Determine a quantidade de equilíbrio.
+| Semana | Demanda | Estoque Inicial | Recebimento (PMP) | Estoque Final | ATP |
+|--------|---------|----------------|-------------------|---------------|-----|
+| 1 | 35 | 50 | - | 15 | 15 |
+| 2 | 40 | 15 | 100 | 75 | 50 |
+| 3 | 35 | 75 | - | 40 | 20 |
+| 4 | 30 | 40 | 100 | 110 | 85 |
+| 5 | 45 | 110 | - | 65 | 55 |
+
+Na semana 1: Estoque suficiente (50 - 35 = 15)   
+Na semana 2: Necessário produzir 100 unidades (estoque cairia para -25 sem produção)   
+Na semana 4: Nova produção programada para manter níveis adequados
 
 ---
 
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+## Plano Mestre de Produção (PMP)
 
+### Exemplo 2
 
-
-### COM VOCÊS
-
-<div class="countdown" id="timer_77f326df" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-
-
-**Enunciado:** Um restaurante tem um custo de instalação de R$80.000,00 (e não teria outros custos fixos). Cada refeição terá um custo médio de R$4,00. Esse valor é constante e independe da quantidade produzida, para a faixa de produção considerada. O preço estimado para a venda de cada refeição é também homogêneo e tem o valor de R$8,00. Considere a hipótese de que o restaurante operará com uma taxa de demanda igual à sua capacidade operacional (200 refeições/dia). Determine a partir de quanto tempo o negócio passa a ser lucrativo?
+**Indústria de Móveis**   
+Produto: Mesa de Jantar 6 lugares   
+Estoque inicial: 0 unidades   
+Política: Produzir em lotes de 50 unidades   
+Lead time: 2 semanas 
 
 ---
 
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+## Plano Mestre de Produção (PMP)
 
+### Exemplo 2
 
-### Método do Ponto de Equilíbrio para Comparação
-
-O **Ponto de Equilíbrio para Comparação** é uma variação da análise clássica, utilizada para comparar diferentes opções ou cenários — por exemplo, escolher entre dois projetos de investimento ou modos de produção distintos.
-
-- Analisar e comparar alternativas sob o ponto de vista dos custos e receitas   
-- Identificar o volume de produção/vendas necessário para compensar os custos em cada alternativa   
-- Decidir qual cenário é mais vantajoso em diferentes níveis de atividade
-
----
-
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
-
-### Método do Ponto de Equilíbrio para Comparação
-
-1. Identifica os custos fixos e variáveis de cada alternativa a ser comparada
-2. Calcula o ponto de equilíbrio de cada opção — ou o ponto de interseção entre duas alternativas, caso a ideia seja comparar, por exemplo, se vale mais a pena produzir internamente ou terceirizar.
-3. Compara os resultados e avalia, para diferentes volumes, qual cenário se mostra mais vantajoso financeiramente.
-
-&gt; O resultado indica a partir de qual produção/venda uma alternativa será mais econômica que a outra.
+| Semana | Previsão | Pedidos | Demanda Total | Estoque Projetado | PMP |
+|--------|----------|---------|---------------|-------------------|----------------|
+| 1 | 15 | 20 | 20 | 0 → -20 | 50 (semana -1) |
+| 2 | 18 | 12 | 18 | 30 → 12 | - |
+| 3 | 20 | 15 | 20 | 12 → -8 | 50 (semana 1) |
+| 4 | 22 | 10 | 22 | 42 → 20 | - |
 
 
 ---
 
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+## Plano Mestre de Produção (PMP)
 
-### Ponto de Equilíbrio de Indiferença (Comparação entre duas alternativas):
+### Exemplo 2
 
-`$$CF_A + CV_{uA} × Q = CF_B + CV_{uB} × Q$$`
-`$$Q_Indiferença = (CF_A - CF_B) / (CV_{uB} - CV_{uA})$$`
-`\(Q\)` = Quantidade no ponto de equilíbrio   
-`\(CF\)` = Custo Fixo Total   
-`\(CV_u\)` = Custo Variável Unitário   
-`\(PV_u\)` = Preço de Venda Unitário   
+**Decisões:**   
+Produção de 50 unidades deve iniciar 2 semanas antes da necessidade   
+Semana 1 precisa de produção iniciada na semana -1 (antes do período)   
+Semana 3 precisa de produção iniciada na semana 1   
 
 ---
 
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+## Plano Mestre de Produção (PMP)
 
-
-### Método do Ponto de Equilíbrio para Comparação
-
-Imagine que você está decidindo entre produzir uma peça internamente (Alternativa A) ou terceirizar a produção (Alternativa B):
-
-.pull-left[
-1. Alternativa A (Produção interna):   
-  Custo Fixo Total (CFA): R$ 50.000/mês (máquinas, instalações)   
-  Custo Variável Unitário (CVuA): R$ 10/unidade   
-]
-.pull-right[
-2. Alternativa B (Terceirização):   
-  Custo Fixo Total (CFB): R$ 10.000/mês (negociação, administração)   
-  Custo Variável Unitário (CVuB): R$ 20/unidade
-]
+### Exemplo 3
+Produto: Smartphone Modelo Pro.  
+Múltiplos canais de venda.  
+Sazonalidade forte   
 
 ---
 
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+## Plano Mestre de Produção (PMP)
 
+### Exemplo 3
 
-### Método do Ponto de Equilíbrio para Comparação
+| Mês | Previsão | Pedidos Firmes | Capacidade | PMP | Estoque Final |
+|-----|----------|----------------|------------|-------|---------------|
+| Jan | 5.000 | 4.500 | 6.000 | 5.500 | 1.000 |
+| Fev | 4.500 | 3.800 | 6.000 | 5.000 | 1.500 |
+| Mar | 6.000 | 5.200 | 6.000 | 6.000 | 1.500 |
+| Abr | 7.500 | 4.000 | 6.000 | 6.000 | 0 |
+| Mai | 8.000 | 3.500 | 6.000 | 6.000 | -2.000* |
+| Jun | 5.500 | 2.000 | 6.000 | 7.500** | 0 |
 
-Opção	| Custo Fixo	|Custo Variável Unitário	|Custo Total (exemplo para 5.000 unid)|
-----|-------|-------|-------|
-Produção Interna	|R$ 50.000	|R$ 10	|R$ 50.000 + (5.000 x 10) = R$ 100.000|
-Terceirização	|R$ 10.000	|R$ 20	|R$ 10.000 + (5.000 x 20) = R$ 110.000|
+*Indica necessidade de ajuste.  
 
-
----
-
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
-
-
-### COM VOCÊS
-
-<div class="countdown" id="timer_6027e577" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-
-
-**Exemplo:** Serão avaliados os locais A e B para indústria de bebidas. Determine as faixas de volume em que cada local é melhor.
-
-| Custos | Cidade A | Cidade B |
-| --- | --- | --- |
-| Custo fixo mensal | R$1.000 | R$ 2.000 |
-| Custo variável por unidade | R$ 100 | R$ 50 |
+**Produção antecipada ou horas extras
 
 ---
 
-## 5. Planejamento da Capacidade com Base em Ponto de Equilíbrio
+## Plano Mestre de Produção (PMP)
 
+### Exemplo 3
 
-### Método do Ponto de Equilíbrio para Comparação
+**Análise Estratégica:**
 
-O Método do Ponto de Equilíbrio para Comparação é uma ferramenta poderosa para decidir entre alternativas com estruturas de custos diferentes.
-
-Ele mostra claramente em que ponto uma alternativa passa a ser melhor do que a outra, considerando o volume de operações. Ajuda a fugir de “achismos” e trabalhar com dados claros.
-
----
-
-## 6. Plano Agregado de Produção
-
-### Definição
-
-**Planejamento agregado de produção** é um plano de produção que visa compatibilizar os recursos produtivos da empresa com a demanda agregada, no médio prazo [Martins and Laugeni, 2009]. Conforme afirma Martins and Laugeni [2009], duas estratégias podem ser adotadas e combinadas: 
-
-(i) adequar os recursos necessários para atender a demanda ou   
-(ii) atuar na demanda para adequá-la aos recursos produtivos disponíveis.
-
----
-
-## 6. Plano Agregado de Produção
-
-### Definição
-
-O **Plano Agregado de Produção** (também chamado de Planejamento Agregado) é uma ferramenta de médio prazo usada pelas empresas para **equilibrar a demanda esperada com a capacidade de produção disponível**. Ele serve para responder à pergunta:
-
-&gt; **“Como vamos produzir o suficiente para atender à demanda dos próximos meses, usando bem os recursos que temos?”**
-
-Esse plano normalmente cobre um **horizonte de 3 a 18 meses** e é chamado de “agregado” porque não entra em detalhes de produtos específicos, mas sim em **famílias de produtos** ou **categorias amplas**. Por exemplo, uma fábrica de móveis pode planejar a produção de “cadeiras” como um grupo, sem especificar o modelo exato.
-
-
----
-
-## 6. Plano Agregado de Produção
-
-### 🎯 Objetivos do Plano Agregado
-- **Atender à demanda prevista**
-- **Minimizar custos** (de produção, estoque, horas extras, contratações, etc.)
-- **Usar bem os recursos** (mão de obra, máquinas, materiais)
-- **Evitar faltas ou excessos de estoque**
-
-
----
-
-## 6. Plano Agregado de Produção
-
-### Exemplo de Agregação
-
-
-.pull-left[
-.midi[
-Uma fábrica de eletrodomésticos tem uma família de aparelhos de ar-condicionado constituída por aparelhos pequenos, médios e grande, que consomem, respectivamente, cerca de 10, 12 e 15 minutos de um recurso crítico. Em junho, a demanda de aparelhos pequenos é de 1.000 unidades, de médios, 500, e de grandes, 200, e em julho, respectivamente de 1.200, 700 e 100. Qual será a demanda agregada para junho e julho em termos de quantidade de horas de produção neste recurso crítico?
-]]
-
---
-
-.pull-right[
-| Períodos | Aparelhos | | | Demanda |
-| --- | --- | --- | --- | --- |
-| | Pequeno | Médio | Grande | Agregada |
-| Junho | 166,67 | 100 | 50 | 316,67 |
-| Julho | 200 | 140 | 25 | 365 |
-]
-
----
-
-## 6. Plano Agregado de Produção
-
-### Informações Necessárias
-
-Há uma série de informações necessárias para a elaboração de um plano de produção:
-
-**Recursos:** Equipamentos, instalações, força de trabalho, taxa de produção.
-
-**Previsão da demanda:** Demanda prevista para as famílias de itens.
-
-**Políticas alternativas:** Sub-contratações, contração de novos funcionários, contratos temporários, turnos extras, postergar a produção, estoques, etc.
-
-**Dados de custos:** Produção normal, armazenagem, sub-contratações, turno extra, etc.
-
----
-
-## 6. Plano Agregado de Produção
-
-
-### Técnicas para Elaboração do Plano
-
-Várias técnicas podem ser utilizadas para auxiliar na elaboração de um plano de produção. Algumas delas procuram soluções otimizadas, outras aproveitam-se da experiência e do bom senso dos planejadores.
-
-**Técnicas informais de tentativa e erro:** empregam tabelas e gráficos para visualizar as situações planejadas e decidir pela mais viável.
-
-**Técnicas de pesquisa operacional:** empregam modelos matemáticos (programação linear, programação por objetivos, simulação, algoritmos genéticos, etc.) para buscar a melhor alternativa.
-
----
-
-## 6. Plano Agregado de Produção
-
-### Estratégias Comuns no Plano Agregado
-
-
-.pull-left[
-| Mês | Estação | Demanda (mil unidades) |
-|-----|---------|---------|
-| Jan | Verão ☀️ | 100 |
-| Fev | Verão ☀️ | 90 |
-| Mar | Outono 🍂 | 70 |
-| Abr | Outono 🍂 | 50 |
-| Mai | Outono 🍂 | 40 |
-| Jun | Inverno ❄️ | 30 |
-]
-
-.pull-right[
-| Mês | Estação | Demanda |
-|-----|---------|---------|
-| Jul | Inverno ❄️ | 25 |
-| Ago | Inverno ❄️ | 30 |
-| Set | Primavera 🌸 | 40 |
-| Out | Primavera 🌸 | 60 |
-| Nov | Primavera 🌸 | 80 |
-| Dez | Verão ☀️ | 105 |
-| **TOTAL** | | **820** |
-]
-
----
-
-## 6. Plano Agregado de Produção
-
-### Estratégias Comuns no Plano Agregado
-
-O pico de produção agora é no início e fim do ano (dez, jan, fev).   
-O período de baixa é no meio do ano (jun, jul, ago).   
-A empresa pode usar o inverno para formar estoques para a primavera/verão.   
-A estratégia de produção precisa ser ajustada para lidar com essa sazonalidade invertida.   
-
-
----
-
-
-
-## 6. Plano Agregado de Produção
-
-### Estratégias Comuns no Plano Agregado
-
-.pull-left[
-**Estratégias:**
-
-- Estratégia de Produção Constante
-- Estratégia de Perseguição/Acompanhamento
-- Estratégia Mista
-]
-
-.pull-right[
-**Custos**
-- Produção normal: R$ 5,00/unidade
-- Armazenagem: R$ 0,50/unidade/mês
-- Hora extra: R$ 7,50/unidade
-- Contratação: R$ 5.000/funcionário
-- Demissão: R$ 3.000/funcionário
-- Produtividade: 5.000 unidades/funcionário/mês
-- Força inicial: 10 funcionários (50.000 unidades/mês)
-- Estoque inicial: 0
-]
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 1: PRODUÇÃO CONSTANTE (NIVELADA)
-
-Produzir a mesma quantidade todos os meses.
-
-Produção mensal constante = 820.000 ÷ 12 = 68.333 unidades/mês (arredondando para 69.000)
-
-Funcionários necessários: 69.000 ÷ 5.000 = 14 funcionários (contratar 4)
-
-| Mês | Demanda | Produção | Estoque Inicial | Estoque Final | Custo Produção | Custo Estoque |   |
-|-----|---------|----------|-----------------|---------------|----------------|---------------|-----------------|
-| Jan | 100.000 | 69.000 | 0 | -31.000* | - | - | FALTA! |
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 1: PRODUÇÃO CONSTANTE (NIVELADA)
-
-PROBLEMA! ❌ Janeiro já começa com falta. Precisamos de estoque inicial ou produção maior.
-
-Solução: Produzir 70.000 unidades/mês e precisamos começar com estoque ou ajustar:
-
-Vamos usar 70.000 unidades/mês:
-
-| Mês | Demanda | Produção | Estoque Inicial | Estoque Final | Custo Produção | Custo Estoque | |
-|-----|---------|----------|-----------------|---------------|----------------|---------------|-|
-| Jan | 100.000 | 70.000 | 0 | -30.000* | - | - | Ainda falta! |
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 1: PRODUÇÃO CONSTANTE (NIVELADA)
-
-
-O problema é que começamos com pico! Vamos usar uma abordagem realista: produzir 75.000/mês com 15 funcionários (contratar 5):
-
-| Mês | Demanda | Produção | Estoque Inicial | Estoque Final | Custo Produção | Custo Estoque | |
-|-----|---------|----------|-----------------|---------------|----------------|---------------|-|
-| Jan | 100.000 | 75.000 | 0 | -25.000* | - | - | Ainda falta! |
-	
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 1: PRODUÇÃO CONSTANTE (NIVELADA)
-
-
-A realidade: Com produção constante pura, não conseguimos atender janeiro sem estoque prévio. Vamos assumir que em dezembro do ano anterior já tínhamos 30.000 unidades em estoque (custo histórico).
-
-Tabela Final da Estratégia 1:
-
-| Mês | Demanda | Produção | Estoque Inicial | Estoque Final | Custo Produção | Custo Estoque | |
-|-----|---------|----------|-----------------|---------------|----------------|---------------|-|
-| Jan | 100.000 | 75.000 | 30.000 | 5.000 | R$ 375.000 | R$ 2.500 |
-| Fev | 90.000 | 75.000 | 5.000 | -10.000* | - | - | FALTA! |
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 1: PRODUÇÃO CONSTANTE (NIVELADA)
-
-Precisamos de 80.000 unidades/mês (16 funcionários - contratar 6):
-
-
-| Mês | Demanda | Produção | Estoque Inicial | Estoque Final | Custo Produção | Custo Estoque |
-|-----|---------|----------|-----------------|---------------|----------------|---------------|
-| Jan | 100.000 | 80.000 | 30.000 | 10.000 | R$ 400.000 | R$ 5.000 |
-| Fev | 90.000 | 80.000 | 10.000 | 0 | R$ 400.000 | R$ 0 |
-| Mar | 70.000 | 80.000 | 0 | 10.000 | R$ 400.000 | R$ 5.000 |
-| Abr | 50.000 | 80.000 | 10.000 | 40.000 | R$ 400.000 | R$ 20.000 |
-| Mai | 40.000 | 80.000 | 40.000 | 80.000 | R$ 400.000 | R$ 40.000 |
-| Jun | 30.000 | 80.000 | 80.000 | 130.000 | R$ 400.000 | R$ 65.000 |
-
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 1: PRODUÇÃO CONSTANTE (NIVELADA)
-
-| Mês | Demanda | Produção | Estoque Inicial | Estoque Final | Custo Produção | Custo Estoque |
-|-----|---------|----------|-----------------|---------------|----------------|---------------|
-| Jul | 25.000 | 80.000 | 130.000 | 185.000 | R$ 400.000 | R$ 92.500 |
-| Ago | 30.000 | 80.000 | 185.000 | 235.000 | R$ 400.000 | R$ 117.500 |
-| Set | 40.000 | 80.000 | 235.000 | 275.000 | R$ 400.000 | R$ 137.500 |
-| Out | 60.000 | 80.000 | 275.000 | 295.000 | R$ 400.000 | R$ 147.500 |
-| Nov | 80.000 | 80.000 | 295.000 | 295.000 | R$ 400.000 | R$ 147.500 |
-| Dez | 105.000 | 80.000 | 295.000 | 270.000 | R$ 400.000 | R$ 135.000 |
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 1: PRODUÇÃO CONSTANTE (NIVELADA)
-
-CUSTOS TOTAIS - ESTRATÉGIA 1:
-
-Custo de produção: R$ 400.000 × 12 = R$ 4.800.000
-
-Custo de estoque: R$ 915.000 (muito alto! 🚨)
-
-Custo de contratação: 6 × R$ 5.000 = R$ 30.000
-
-Custo estoque inicial (dezembro anterior): 30.000 × R$ 0,50 = R$ 15.000
-
-TOTAL: R$ 5.760.000 ❌
-
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 2: ACOMPANHAMENTO DA DEMANDA (PERSEGUIÇÃO)
-
-Produzimos exatamente o que é demandado, ajustando a força de trabalho.
-
-| Mês | Demanda | Prod. Normal | Prod. H. Extra | Funcionários | Contrat. | Demiss. | Custo Prod. | Custo H.E. | Custo Contrat. | Custo Demiss. |
-|-----|---------|--------------|----------------|--------------|----------|---------|-------------|------------|----------------|--------------|
-| Jan | 100.000 | 50.000 | 50.000 | 10 | 0 | 0 | R$ 250.000 | R$ 375.000 | R$ 0 | R$ 0 |
-| Fev | 90.000 | 50.000 | 40.000 | 10 | 0 | 0 | R$ 250.000 | R$ 300.000 | R$ 0 | R$ 0 |
-| Mar | 70.000 | 50.000 | 20.000 | 10 | 0 | 0 | R$ 250.000 | R$ 150.000 | R$ 0 | R$ 0 |
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 2: ACOMPANHAMENTO DA DEMANDA (PERSEGUIÇÃO)
-
-| Mês | Demanda | Prod. Normal | Prod. H. Extra | Funcionários | Contrat. | Demiss. | Custo Prod. | Custo H.E. | Custo Contrat. | Custo Demiss. |
-|-----|---------|--------------|----------------|--------------|----------|---------|-------------|------------|----------------|--------------|
-| Abr | 50.000 | 50.000 | 0 | 10 | 0 | 0 | R$ 250.000 | R$ 0 | R$ 0 | R$ 0 |
-| Mai | 40.000 | 40.000 | 0 | 8 | 0 | 2 | R$ 200.000 | R$ 0 | R$ 0 | R$ 6.000 |
-| Jun | 30.000 | 30.000 | 0 | 6 | 0 | 2 | R$ 150.000 | R$ 0 | R$ 0 | R$ 6.000 |
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 2: ACOMPANHAMENTO DA DEMANDA (PERSEGUIÇÃO)
-
-| Mês | Demanda | Prod. Normal | Prod. H. Extra | Funcionários | Contrat. | Demiss. | Custo Prod. | Custo H.E. | Custo Contrat. | Custo Demiss. |
-|-----|---------|--------------|----------------|--------------|----------|---------|-------------|------------|----------------|--------------|
-| Jul | 25.000 | 25.000 | 0 | 5 | 0 | 1 | R$ 125.000 | R$ 0 | R$ 0 | R$ 3.000 |
-| Ago | 30.000 | 30.000 | 0 | 6 | 1 | 0 | R$ 150.000 | R$ 0 | R$ 5.000 | R$ 0 |
-| Set | 40.000 | 40.000 | 0 | 8 | 2 | 0 | R$ 200.000 | R$ 0 | R$ 10.000 | R$ 0 |
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 2: ACOMPANHAMENTO DA DEMANDA (PERSEGUIÇÃO)
-
-| Mês | Demanda | Prod. Normal | Prod. H. Extra | Funcionários | Contrat. | Demiss. | Custo Prod. | Custo H.E. | Custo Contrat. | Custo Demiss. |
-|-----|---------|--------------|----------------|--------------|----------|---------|-------------|------------|----------------|--------------|
-| Out | 60.000 | 50.000 | 10.000 | 10 | 2 | 0 | R$ 250.000 | R$ 75.000 | R$ 10.000 | R$ 0 |
-| Nov | 80.000 | 50.000 | 30.000 | 10 | 0 | 0 | R$ 250.000 | R$ 225.000 | R$ 0 | R$ 0 |
-| Dez | 105.000 | 50.000 | 55.000 | 10 | 0 | 0 | R$ 250.000 | R$ 412.500 | R$ 0 | R$ 0 |
-
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 2: ACOMPANHAMENTO DA DEMANDA (PERSEGUIÇÃO)
-
-CUSTOS TOTAIS - ESTRATÉGIA 2:
-
-Custo produção normal: R$ 2.575.000
-
-Custo hora extra: R$ 1.537.500
-
-Custo de contratação: R$ 25.000
-
-Custo de demissão: R$ 15.000
-
-Custo de estoque: R$ 0
-
-TOTAL: R$ 4.152.500 ✅
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 3: MISTA (HÍBRIDA)
-
-Mantemos 12 funcionários fixos (60.000 unidades/mês), criamos estoque estratégico no inverno e usamos horas extras moderadas.
-
-| Mês | Demanda | Prod. Normal | H. Extra | Estoque Inicial | Estoque Final | Custo Prod. | Custo H.E. | Custo Est. |
-|-----|---------|--------------|----------|-----------------|---------------|-------------|------------|------------|
-| Jan | 100.000 | 60.000 | 30.000 | 0 | -10.000* | R$ 300.000 | R$ 225.000 | R$ 0 |
-
-Problema: Começamos com falta. Vamos assumir estoque inicial de 15.000 unidades:
-
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 3: MISTA (HÍBRIDA)
-
-| Mês | Demanda | Prod. Normal | H. Extra | Estoque Inicial | Estoque Final | Custo Prod. | Custo H.E. | Custo Est. |
-|-----|---------|--------------|----------|-----------------|---------------|-------------|------------|------------|
-| Jan | 100.000 | 60.000 | 25.000 | 15.000 | 0 | R$ 300.000 | R$ 187.500 | R$ 0 |
-| Fev | 90.000 | 60.000 | 30.000 | 0 | 0 | R$ 300.000 | R$ 225.000 | R$ 0 |
-| Mar | 70.000 | 60.000 | 10.000 | 0 | 0 | R$ 300.000 | R$ 75.000 | R$ 0 |
-| Abr | 50.000 | 60.000 | 0 | 0 | 10.000 | R$ 300.000 | R$ 0 | R$ 5.000 |
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 3: MISTA (HÍBRIDA)
-
-| Mês | Demanda | Prod. Normal | H. Extra | Estoque Inicial | Estoque Final | Custo Prod. | Custo H.E. | Custo Est. |
-|-----|---------|--------------|----------|-----------------|---------------|-------------|------------|------------|
-| Mai | 40.000 | 60.000 | 0 | 10.000 | 30.000 | R$ 300.000 | R$ 0 | R$ 15.000 |
-| Jun | 30.000 | 60.000 | 0 | 30.000 | 60.000 | R$ 300.000 | R$ 0 | R$ 30.000 |
-| Jul | 25.000 | 60.000 | 0 | 60.000 | 95.000 | R$ 300.000 | R$ 0 | R$ 47.500 |
-| Ago | 30.000 | 60.000 | 0 | 95.000 | 125.000 | R$ 300.000 | R$ 0 | R$ 62.500 |
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 3: MISTA (HÍBRIDA)
-
-| Mês | Demanda | Prod. Normal | H. Extra | Estoque Inicial | Estoque Final | Custo Prod. | Custo H.E. | Custo Est. |
-|-----|---------|--------------|----------|-----------------|---------------|-------------|------------|------------|
-| Set | 40.000 | 60.000 | 0 | 125.000 | 145.000 | R$ 300.000 | R$ 0 | R$ 72.500 |
-| Out | 60.000 | 60.000 | 0 | 145.000 | 145.000 | R$ 300.000 | R$ 0 | R$ 72.500 |
-| Nov | 80.000 | 60.000 | 0 | 145.000 | 125.000 | R$ 300.000 | R$ 0 | R$ 62.500 |
-| Dez | 105.000 | 60.000 | 0 | 125.000 | 80.000 | R$ 300.000 | R$ 0 | R$ 40.000 |
-
-Funcionários: 12 (contratar 2)
-
----
-
-## 6. Plano Agregado de Produção
-
-📊 ESTRATÉGIA 3: MISTA (HÍBRIDA)
-
-CUSTOS TOTAIS - ESTRATÉGIA 3:
-
-Custo produção normal: R$ 300.000 × 12 = R$ 3.600.000
-
-Custo hora extra: R$ 487.500
-
-Custo de estoque: R$ 407.500
-
-Custo de contratação: 2 × R$ 5.000 = R$ 10.000
-
-Custo estoque inicial: 15.000 × R$ 0,50 = R$ 7.500
-
-TOTAL: R$ 4.512.500
-
----
-
-## 6. Plano Agregado de Produção
-
-🏆 COMPARAÇÃO FINAL
-
-| Estratégia | Custo Total | Diferença | Vantagens | Desvantagens |
-|------------|-------------|------------|------------|--------------|
-| 1. Produção Constante | R$ 5.760.000 | - | Estabilidade total | Custo de estoque ALTÍSSIMO (inverno acumula muito) ❌ |
-| 2. Perseguição | R$ 4.152.500 ✅✅ | - | Menor custo, sem estoque | Instabilidade, muita rotatividade |
-| 3. Mista | R$ 4.512.500 | +R$ 360.000 | Bom equilíbrio | Algum custo de estoque |
-
-Economia da Estratégia 2 vs. Estratégia 1: R$ 1.607.500 (28% mais barata!)
-
-
----
-
-## 6. Plano Agregado de Produção
-
-💡 INSIGHTS IMPORTANTES
-
-A produção constante fica MUITO cara porque acumula estoque gigante no inverno (até 235 mil unidades em setembro!).   
-A estratégia de perseguição é a mais econômica (R$ 4.152.500), mas exige muita flexibilidade na equipe.   
-A estratégia mista é interessante porque usa o inverno para "estocar para o verão", mas ainda economiza R$ 1,2 milhão vs. produção constante.   
-O pico no início do ano (janeiro) é um desafio — precisa de estoque prévio ou muita hora extra.   
-
----
-
-## 6. Plano Agregado de Produção
-
-🎯 Recomendação Final
-
-Estratégia 3 (Mista) modificada:
-
-Manter 12-14 funcionários fixos   
-Usar o inverno (jun-ago) para formar estoque estratégico   
-Usar horas extras moderadas no verão (jan-fev, dez)   
-Evitar demissões em massa   
-
-Isso dá mais estabilidade operacional sem explodir os custos.
-
-
-
----
-
-## 6. Plano Agregado de Produção
-
-<div class="countdown" id="timer_f46d1f01" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-
-### Exemplo Prático: Plano de Produção
-
-Desenvolver um plano de produção de uma família de produtos, para os próximos dois anos com períodos trimestrais.
-
-
-| Periodo | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
-|---------|---|---|---|---|---|---|---|---|
-| Prev. Dem. | 200 | 200 | 200 | 300 | 400 | 300 | 200 | 200 |
-
----
-
-## 6. Plano Agregado de Produção
-
-### Exemplo Prático: Plano de Produção (continuação)
-
-**Dados de custos:**
-
-- Custo unitário de estoque por período: R$2
-- Custo unitário de produção (normal): R$4 (Produção em turno normal deve ser estável)
-- Custo unitário de produção (extra): R$6 (Limitado a 50 unidades)
-- Custo unitário de subcontração: R$10
-- Custo unitário de atraso (por trimestre): R$12
-
----
-
-## 6. Plano Agregado de Produção
-
-### Alternativa 1: Produção Nivelada
-
-A estratégia visa manter a capacidade produtiva constante de 250 unidades (2000/8 = 250) por trimestre, e utilizar os estoques para absorver as variações da demanda. Vamos admitir atrasos e transferências de entregas para os períodos seguintes.
-
-.small[
-| Periodo | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | Total | Custo unit. | Custo |
-|---------|---|---|---|---|---|---|---|---|-------|------------|-------|
-| Prev. Dem. | 200 | 200 | 200 | 300 | 400 | 300 | 200 | 200 | 2000 | | |
-| Turno normal | 250 | 250 | 250 | 250 | 250 | 250 | 250 | 250 | 2000 | 4 | 8.000 |
-| Turno Extra | | | | | | | | | | 6 | 0 |
-| Subcontratação | | | | | | | | | | 10 | 0 |
-| Estoque final | 50 | 100 | 150 | 100 | 0 | 0 | 0 | 0 | 400 | 2 | 800 |
-| Atraso | | | | | 50 | 100 | 50 | | 200 | 12 | 2.400 |
-| | | | | | | | | | | | 11.200 |
-]
-
-
----
-
-## 6. Plano Agregado de Produção
-
-### Alternativa 2: Acompanhar a Demanda
-
-Na segunda alternativa vamos acompanhar a demanda: produção normal de 200 unidades e incremento na demanda através de turnos extras de até 50 unidades por trimestres e restante sub-contratado de terceiros.
-
-.small[
-
-| Periodo | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | Total | Custo unit. | Custo |
-|---------|---|---|---|---|---|---|---|---|-------|------------|-------|
-| Prev. Dem. | 200 | 200 | 200 | 300 | 400 | 300 | 200 | 200 | 2000 | | |
-| Turno normal | 200 | 200 | 200 | 200 | 200 | 200 | 200 | 200 | 1600 | 4 | 6400 |
-| Turno Extra | | | | 50 | 50 | 50 | | | 150 | 6 | 900 |
-| Subcontratação | | | | 50 | 150 | 50 | | | 250 | 10 | 2500 |
-| Estoque final | | | | | | | | | | 2 | |
-| Atraso | | | | | | | | | | 12 | |
-| | | | | | | | | | | | 9800 |
-]
-
----
-
-## 6. Plano Agregado de Produção
-
-<div class="countdown" id="timer_a2ce518b" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-
-### Exemplo Adicional
-
-O planejamento agregado da produção para uma família de bebidas é feito anualmente com base na demanda de horas de produção.
-
-| Trimestre | 1 | 2 | 3 | 4 | Total |
-|-----------|---|---|---|---|-------|
-| Demanda | 200 | 300 | 300 | 200 | 1000 |
-
-
----
-
-## 6. Plano Agregado de Produção
-
-### Comparação de Planos Agregados
-
-**Plano 1:**
-
-| Trimestre | 1 | 2 | 3 | 4 | Total | Custo | Custo |
-|-----------|---|---|---|---|-------|-------|-------|
-| Demanda | 200 | 300 | 300 | 200 | 1000 | | |
-| Turno normal | 250 | 250 | 250 | 250 | 1000 | 4 | 4000 |
-| Turno Extra | | | | | | 6 | |
-| Subcont. | | | | | | 8 | |
-| Estoque final | 50 | | | | 50 | 4 | 200 |
-| Atraso | | | 50 | | 50 | 9 | 450 |
-
-
----
-
-## 6. Plano Agregado de Produção
-
-### Comparação de Planos Agregados
-
-**Plano 2:**
-
-| Trimestre | 1 | 2 | 3 | 4 | Total | Custo | Custo |
-|-----------|---|---|---|---|-------|-------|-------|
-| Demanda | 200 | 300 | 300 | 200 | 1000 | | |
-| Turno normal | 200 | 200 | 200 | 200 | 800 | 4 | 3200 |
-| Turno Extra | | 50 | 50 | | 100 | 6 | 600 |
-| Subcont. | | 50 | 50 | | 100 | 8 | 800 |
-| Estoque final | | | | | | 4 | |
-| Atraso | | | | | | 9 | |
-
-
----
-
-## 6. Plano Agregado de Produção
-
-<div class="countdown" id="timer_5dd65753" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">&minus;</button><button class="countdown-bump-up">&plus;</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-
-### Exercício Integrador
-
-| Mês | Jun | Jul | Ago | Set | Out | Nov |
-|-----|-----|-----|-----|-----|-----|-----|
-| Demanda prevista | 2000 | 2800 | 3600 | 3600 | 4000 | 3200 |
-
-Considere também que cada produto da família em análise consuma (tempo-padrão) 3 minutos do recurso crítico RC. O RC tem índices de utilização de 62,5% e de eficiência de 80%. Cada operador do RC possui 180 horas mensais. (i) Determine a capacidade total teórica (ou disponível) necessária em horas por mês para a produção dos produtos da família FP1; e (ii) Calcule o número de funcionários necessários para cada política de produção. 
-
-a) Política de acompanhamento da demanda com a produção (lote a lote)   
-b) Política de nivelamento da produção   
-
----
-
-
-## 7. Gestão da Capacidade Produtiva e Grau de Estocabilidade
-
-### Capacidade Produtiva
-
-Gestão da capacidade em operação depende do grau de estocabilidade:
-
-- Alterar a capacidade disponível, ajustando-a às variações da demanda
-- Influenciar a demanda para ajustá-la à capacidade disponível
-
----
-
-## 7. Gestão da Capacidade Produtiva e Grau de Estocabilidade
-
-### Alternativas para Influenciar a Demanda
-
-**Alternativas para influenciar a demanda:**
-
-- Promoções de preços
-- Mudança temporária de foco
-- Comunicação com o cliente
-- Acesso virtual dos clientes ao serviço
-- Sistema de reservas
-
----
-
-## 7. Gestão da Capacidade Produtiva e Grau de Estocabilidade
-
-### Gerenciando Capacidade e Receita
-
-**Overbooking:** vender antecipadamente uma capacidade maior do que a realmente disponível na data de prestação do serviço.
-
-**Gestão da receita (Yield Management):** tenta maximizar a receita da venda de serviço tomando decisões a respeito de preços discriminados (diferentes) a serem praticados, possibilidade de realocação de capacidade entre os diversos segmentos da demanda e nível adequado de overbooking.
-
-Exemplo: preço da estadia em um hotel
-
----
-
-## Bibliografia
-
-**Corrêa, Henrique L.** Administração de produção e operações: manufatura e serviços: uma abordagem estratégica/henrique l. Corrêa, Carlos A. Corrêa. 4ª Ed. São Paulo: Atlas, 2017.
-
-**Graeml, Alexandre R e Peinado, Jurandir.** Administração da produção: operações industriais e de serviços. Curitiba: UnicenP, pages 22–30, 2007.
-
-**Lustosa, Leonardo Junqueira, Mesquita, Marco Aurélio de, e Oliveira, Rodrigo J.** Planejamento e controle da produção. Elsevier Brasil, 2008.
-
-**Martins, Petrônio Garcia e Laugeni, Fernando P.** Administração da produção e operações. São Paulo: Saraiva, 2009.
-
-**Slack, Nigel, Chambers, Stuart, Johnston, Robert, et al.** Administração da produção, volume 2. Atlas São Paulo, 2009.
-
-
+Abril-Maio: Pico de demanda requer planejamento antecipado
+Opções: produção antecipada (Jan-Mar), horas extras, ou terceirização
+Necessidade de revisar capacidade ou política de estoque
 
 
 ---
