@@ -11,7 +11,7 @@
     <script src="libs/panelset/panelset.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"b393b0156f544319b844cdebd65349ca","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xd0a1e50a96745d7b0ba4df0fedb3776","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -141,16 +141,29 @@ Work in process (WIP)
 
 ## Plano Mestre de Produção (PMP)
 
+### Outputs do PMP:
+
+- Quantidade a produzir por período.  
+- ATP (Available to Promise) – disponível para vender.  
+- Estoque projetado.  
+- Necessidades de capacidade.  
+
+---
+
+## Plano Mestre de Produção (PMP)
+
 ###  Estrutura do PMP
 
 | Período | Previsão | Pedidos | Disponível | PMP | ATP* |
 |---------|----------|---------|------------|------|-----|
 | Semana 1 | X | Y | Z | W | Q |
 | Semana 2 | X | Y | Z | W | Q |
-| Semana 3 | X | Y | Z | W | Q |
-| Semana 4 | X | Y | Z | W | Q |
 
 *ATP: Available to Promise (Disponível para Promessa)
+
+`$$Demanda = MAX(Previsão, Pedidos Firmes)$$`
+
+Por quê? Porque pedidos firmes JÁ fazem parte da previsão, não são demanda adicional!
 
 ---
 
@@ -166,9 +179,9 @@ ATP = Estoque Disponível + PMP - Pedidos Firmes acumulados até próximo PMP
 **2. Estoque de Segurança**
 Buffer para absorver variações de demanda ou problemas de produção.
 
-**3. Congelamento do Horizonte**
-Zona congelada (1-4 semanas): Sem alterações
-Zona firme (5-8 semanas): Alterações limitadas
+**3. Congelamento do Horizonte**.  
+Zona congelada (1-4 semanas): Sem alterações.  
+Zona firme (5-8 semanas): Alterações limitadas.  
 Zona flexível (9+ semanas): Alterações permitidas
 
 
@@ -298,16 +311,18 @@ Semana 3 precisa de produção iniciada na semana 1
 ## Plano Mestre de Produção (PMP)
 
 ### Exemplo 3
+
+.pull-left-narrow[
 Produto: Smartphone Modelo Pro.  
 Múltiplos canais de venda.  
-Sazonalidade forte   
+Sazonalidade forte. 
 
----
+*Indica necessidade de ajuste.  
 
-## Plano Mestre de Produção (PMP)
+**Produção antecipada ou horas extras
+]
 
-### Exemplo 3
-
+.pull-right-wide[
 | Mês | Previsão | Pedidos Firmes | Capacidade | PMP | Estoque Final |
 |-----|----------|----------------|------------|-------|---------------|
 | Jan | 5.000 | 4.500 | 6.000 | 5.500 | 1.000 |
@@ -317,9 +332,7 @@ Sazonalidade forte
 | Mai | 8.000 | 3.500 | 6.000 | 6.000 | -2.000* |
 | Jun | 5.500 | 2.000 | 6.000 | 7.500** | 0 |
 
-*Indica necessidade de ajuste.  
-
-**Produção antecipada ou horas extras
+]
 
 ---
 
@@ -329,9 +342,11 @@ Sazonalidade forte
 
 **Análise Estratégica:**
 
-Abril-Maio: Pico de demanda requer planejamento antecipado
-Opções: produção antecipada (Jan-Mar), horas extras, ou terceirização
-Necessidade de revisar capacidade ou política de estoque
+- Abril-Maio: Pico de demanda requer planejamento antecipado
+
+- Opções: produção antecipada (Jan-Mar), horas extras, ou terceirização
+
+- Necessidade de revisar capacidade ou política de estoque
 
 
 ---
