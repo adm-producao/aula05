@@ -147,10 +147,6 @@ Work in process (WIP)
 
 *ATP: Available to Promise (Disponível para Promessa)
 
-$$Demanda = MAX(Previsão, Pedidos Firmes)$$
-
-Por quê? Porque pedidos firmes JÁ fazem parte da previsão, não são demanda adicional!
-
 ---
 
 ## Plano Mestre de Produção (PMP)
@@ -160,7 +156,19 @@ Por quê? Porque pedidos firmes JÁ fazem parte da previsão, não são demanda 
 **1. ATP (Available to Promise)**
 Quantidade que pode ser prometida a novos clientes sem comprometer pedidos existentes.
 
-ATP = Estoque Disponível + PMP - Pedidos Firmes acumulados até próximo PMP
+ATP1 = Estoque Disponível + PMP - Pedidos Firmes acumulados até próximo PMP
+
+ATP para semanas COM produção (PMP > 0):  
+ATP = PMP - Pedidos Firmes acumulados até próximo PMP
+
+ATP para semanas SEM produção (PMP = 0):  
+ATP = 0
+
+---
+
+## Plano Mestre de Produção (PMP)
+
+### Elementos Críticos do PMP
 
 **2. Estoque de Segurança**
 Buffer para absorver variações de demanda ou problemas de produção.
@@ -219,11 +227,15 @@ O PMP é fundamental para empresas que buscam equilibrar eficiência operacional
 
 .pull-left[
 **Fábrica de Bicicletas**   
+.midi[
 Produto: Bicicleta Mountain Bike Modelo X   
 Estoque inicial: 50 unidades   
 Estoque de segurança desejado: 20 unidades   
 Lote de produção: 100 unidades   
 Lead time de produção: 1 semana   
+
+*Lead Time de Produção é o tempo total necessário desde o momento em que você decide produzir um item até ele estar disponível para entrega/venda. Lead Time Total = Tempo de Setup + Tempo de Processamento + Tempo de Espera + Tempo de Movimentação
+]
 ]
 
 .pull-right[
@@ -243,17 +255,19 @@ Lead time de produção: 1 semana
 
 ### Exemplo 1
 
-| Semana | Demanda | Estoque Inicial | Recebimento (PMP) | Estoque Final | ATP |
-|--------|---------|----------------|-------------------|---------------|-----|
-| 1 | 35 | 50 | - | 15 | 15 |
-| 2 | 40 | 15 | 100 | 75 | 50 |
-| 3 | 35 | 75 | - | 40 | 20 |
-| 4 | 30 | 40 | 100 | 110 | 85 |
-| 5 | 45 | 110 | - | 65 | 55 |
+| Semana | Pedidos Firmes | Demanda Total | Estoque Inicial | Liberação de Ordem | Recebimento (PMP) | Estoque Final | ATP |
+|--------|----------------|---------------|-----------------|-------------------|-------------------|---------------|-----|
+| 1 | 35 | 35 | 50 | 100 → | - | 15 | 15 |
+| 2 | 25 | 40 | 15 | - | 100 ← | 75 | 55 |
+| 3 | 20 | 35 | 75 | 100 → | - | 40 | 0 |
+| 4 | 15 | 30 | 40 | - | 100 ← | 110 | 75 |
+| 5 | 10 | 45 | 110 | - | - | 65 | 0 |
 
+.midi[
 Na semana 1: Estoque suficiente (50 - 35 = 15)   
-Na semana 2: Necessário produzir 100 unidades (estoque cairia para -25 sem produção)   
-Na semana 4: Nova produção programada para manter níveis adequados
+Na semana 2: Necessário recebimento do 100 unidades (estoque cairia para -25 sem produção)   
+Na semana 4: Novo recebimento programado para manter níveis adequados
+]
 
 ---
 
