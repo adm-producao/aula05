@@ -6,7 +6,7 @@ author:
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: ["slides.css", "xaringan-themer.css", "ufcimg-slides.css"]
+    css: ["slides.css", "xaringan-themer.css", "ufcimg-slides-v2.css"]
     nature:
       ratio: "16:9"
       highlightLines: true

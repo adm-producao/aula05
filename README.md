@@ -8,7 +8,8 @@ Apresentação xaringan da Unidade 05, dedicada ao Plano Mestre de Produção (P
 
 - `index.Rmd`: fonte da apresentação.
 - `index.html`: apresentação renderizada e publicada pelo GitHub Pages.
-- `ufcimg-slides.css`: identidade visual e regras de diagramação.
+- `ufcimg-slides-v2.css`: identidade visual e regras de diagramação ativas.
+- `ufcimg-slides.css`: versão anterior, mantida para rastreabilidade.
 - `slides.css` e `xaringan-themer.css`: estilos complementares existentes.
 - `setup.Rmd`: configuração dos pacotes e opções do R Markdown.
 
@@ -22,6 +23,7 @@ Foram criadas classes específicas para slides densos e tabelas largas. As alter
 - compactam o quadro de congelamento do horizonte;
 - reequilibram as colunas do exemplo de smartphone;
 - preservam o conteúdo analítico e a identidade visual UFCIMG.
+- usam um nome versionado para o CSS, evitando que o navegador reutilize a folha de estilos anterior após a publicação.
 
 ## Reprodução
 
