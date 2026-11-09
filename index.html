@@ -11,7 +11,7 @@
     <script src="libs/panelset/panelset.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"fd36d973b5f748b3b87478ae54e7dd3d","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xf0a05a9aa614038a9392e16c03c9a25","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -196,6 +196,8 @@ Zona flexível (9+ semanas): Alterações permitidas
 
 ---
 
+class: dense-table time-fence-table
+
 ## Plano Mestre de Produção (PMP)
 
 ### Elementos Críticos do PMP
@@ -236,6 +238,8 @@ O PMP é fundamental para empresas que buscam equilibrar eficiência operacional
 
 ---
 
+class: example-overview
+
 ## Plano Mestre de Produção (PMP)
 
 ### Exemplo 1
@@ -249,7 +253,9 @@ Estoque de segurança desejado: 20 unidades
 Lote de produção: 100 unidades   
 Lead time de produção: 1 semana   
 
-*Lead Time de Produção é o tempo total necessário desde o momento em que você decide produzir um item até ele estar disponível para entrega/venda. Lead Time Total = Tempo de Setup + Tempo de Processamento + Tempo de Espera + Tempo de Movimentação
+.leadtime-note[
+**Lead time de produção:** intervalo entre a liberação da ordem e a disponibilidade do item. Inclui setup, processamento, espera e movimentação.
+]
 ]
 ]
 
@@ -266,11 +272,13 @@ Lead time de produção: 1 semana
 
 ---
 
+class: dense-table pmp-calculation
+
 ## Plano Mestre de Produção (PMP)
 
 ### Exemplo 1
 
-| Semana | Pedidos Firmes | Demanda Total | Estoque Inicial | Liberação de Ordem | Recebimento (PMP) | Estoque Final | ATP |
+| Semana | Pedidos&lt;br&gt;Firmes | Demanda&lt;br&gt;Total | Estoque&lt;br&gt;Inicial | Liberação&lt;br&gt;de Ordem | Recebimento&lt;br&gt;(PMP) | Estoque&lt;br&gt;Final | ATP |
 |--------|----------------|---------------|-----------------|-------------------|-------------------|---------------|-----|
 | 1 | 35 | 35 | 50 | 100 → | - | 15 | 15 |
 | 2 | 25 | 40 | 15 | - | 100 ← | 75 | 55 |
@@ -278,10 +286,10 @@ Lead time de produção: 1 semana
 | 4 | 15 | 30 | 40 | - | 100 ← | 110 | 75 |
 | 5 | 10 | 45 | 110 | - | - | 65 | 0 |
 
-.midi[
-Na semana 1: Estoque suficiente (50 - 35 = 15)   
-Na semana 2: Necessário recebimento do 100 unidades (estoque cairia para -25 sem produção)   
-Na semana 4: Novo recebimento programado para manter níveis adequados
+.case-notes[
+- **Semana 1:** estoque final = 50 − 35 = **15 unidades**.
+- **Semana 2:** receber **100 unidades** evita estoque de −25.
+- **Semana 4:** novo recebimento recompõe o estoque.
 ]
 
 ---
@@ -297,6 +305,8 @@ Política: Produzir em lotes de 50 unidades
 Lead time: 2 semanas 
 
 ---
+
+class: table-compact
 
 ## Plano Mestre de Produção (PMP)
 
@@ -323,6 +333,8 @@ Semana 3 precisa de produção iniciada na semana 1
 
 ---
 
+class: dense-table example-smartphone
+
 ## Plano Mestre de Produção (PMP)
 
 ### Exemplo 3
@@ -338,7 +350,7 @@ Sazonalidade forte.
 ]
 
 .pull-right-wide[
-| Mês | Previsão | Pedidos Firmes | Capacidade | PMP | Estoque Final |
+| Mês | Previsão | Pedidos&lt;br&gt;Firmes | Capacidade | PMP | Estoque&lt;br&gt;Final |
 |-----|----------|----------------|------------|-------|---------------|
 | Jan | 5.000 | 4.500 | 6.000 | 5.500 | 1.000 |
 | Fev | 4.500 | 3.800 | 6.000 | 5.000 | 1.500 |

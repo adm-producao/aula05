@@ -255,6 +255,8 @@ img, video, iframe { max-width: 100%; }
 .remark-slide table {
   border-collapse: collapse;
   margin: 20px auto;
+  max-width: 100%;
+  table-layout: fixed;
   width: 100%;
 }
 
@@ -269,7 +271,9 @@ img, video, iframe { max-width: 100%; }
 .remark-slide th,
 .remark-slide td {
   border-bottom: 1px solid var(--ufcimg-rule);
+  overflow-wrap: anywhere;
   padding: 9px 12px;
+  vertical-align: middle;
 }
 
 .remark-slide tbody tr:nth-child(even) {
@@ -370,6 +374,101 @@ div.my-footer span {
 .sem-filete::before, .no-rule::before { display: none; }
 .compact { font-size: 1.2rem; }
 .dense { font-size: 1.05rem; }
+
+/* Slides com maior densidade: mantêm tabelas e notas dentro da área útil. */
+.remark-slide-content.table-compact {
+  font-size: 1.2rem;
+}
+
+.remark-slide-content.dense-table {
+  font-size: 1.08rem;
+}
+
+.remark-slide-content.table-compact table,
+.remark-slide-content.dense-table table {
+  font-size: 0.88em;
+  line-height: 1.14;
+  margin: 10px auto;
+}
+
+.remark-slide-content.table-compact th,
+.remark-slide-content.table-compact td,
+.remark-slide-content.dense-table th,
+.remark-slide-content.dense-table td {
+  padding: 6px 8px;
+}
+
+.remark-slide-content.time-fence-table > p {
+  margin: 8px 0 10px;
+}
+
+.remark-slide-content.time-fence-table table {
+  font-size: 0.78em;
+}
+
+.remark-slide-content.example-overview {
+  font-size: 1.12rem;
+  padding-top: 110px;
+}
+
+.remark-slide-content.example-overview table {
+  font-size: 0.9em;
+  margin-top: 8px;
+}
+
+.leadtime-note {
+  background: var(--ufcimg-secondary-soft);
+  border-left: 5px solid var(--ufcimg-secondary);
+  font-size: 0.86em;
+  line-height: 1.2;
+  margin-top: 14px;
+  padding: 8px 10px;
+}
+
+.remark-slide-content.pmp-calculation table {
+  font-size: 0.73em;
+  margin-bottom: 8px;
+}
+
+.remark-slide-content.pmp-calculation th,
+.remark-slide-content.pmp-calculation td {
+  padding: 5px 6px;
+  text-align: center;
+}
+
+.case-notes {
+  background: var(--ufcimg-light);
+  border-left: 5px solid var(--ufcimg-secondary);
+  font-size: 0.88em;
+  line-height: 1.18;
+  margin-top: 8px;
+  padding: 6px 12px;
+}
+
+.case-notes ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.case-notes li {
+  margin: 2px 0;
+}
+
+.remark-slide-content.example-smartphone .pull-left-narrow {
+  width: 22%;
+}
+
+.remark-slide-content.example-smartphone {
+  padding-top: 110px;
+}
+
+.remark-slide-content.example-smartphone .pull-right-wide {
+  width: 74%;
+}
+
+.remark-slide-content.example-smartphone table {
+  font-size: 0.78em;
+}
 
 @page { margin: 0; }
 
